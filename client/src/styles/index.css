@@ -1,0 +1,217 @@
+:root {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #1f2937;
+    background: #f8fafc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    color: #111827;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+    flex: 1;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(17, 24, 39, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar__inner {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    transition: 0.2s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.nav-link--active {
+    background: #4f46e5;
+    color: #ffffff;
+}
+
+.hero {
+    display: grid;
+    gap: 2rem;
+}
+
+.hero__content {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.hero__logo {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.hero h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+}
+
+.hero p {
+    margin: 0;
+    max-width: 700px;
+    font-size: 1.05rem;
+    color: #4b5563;
+}
+
+.hero__actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 0.9rem 1.2rem;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn--primary {
+    background: #4f46e5;
+    color: white;
+    box-shadow: 0 12px 24px rgba(79, 70, 229, 0.22);
+}
+
+.btn--secondary {
+    background: white;
+    color: #111827;
+    border-color: #d1d5db;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.card,
+.page-section {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+.card h2,
+.page-section h1 {
+    margin-top: 0;
+}
+
+.footer {
+    border-top: 1px solid #e5e7eb;
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    padding: 1rem;
+    text-align: center;
+    color: #6b7280;
+}
+
+@media (max-width: 720px) {
+    .navbar__inner {
+        padding: 0.75rem 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-container {
+        width: min(100% - 1rem, 1120px);
+    }
+
+    .hero__content,
+    .card,
+    .page-section {
+        padding: 1.25rem;
+    }
+}
