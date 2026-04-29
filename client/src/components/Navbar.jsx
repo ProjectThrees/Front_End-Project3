@@ -1,27 +1,37 @@
 import { NavLink } from "react-router-dom";
 
 const navItems = [
-    { to: "/", label: "Home", end: true },
-    { to: "/listings", label: "Browse Listings" },
-    { to: "/listings/new", label: "Create Listing" },
-    { to: "/messages", label: "Messages" },
-    { to: "/favorites", label: "Favorites" }
+    { to: "/listings", label: "Browse" },
+    { to: "/listings/new", label: "Post Item" },
+    { to: "/favorites", label: "Favorites" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onMenuOpen }) {
     return (
         <header className="navbar">
             <div className="navbar__inner">
-                <NavLink to="/" className="brand">
-                    Student Marketplace
-                </NavLink>
+                <div className="navbar__left">
+                    {onMenuOpen && (
+                        <button
+                            className="menu-btn"
+                            onClick={onMenuOpen}
+                            aria-label="Open navigation menu"
+                        >
+                            <span className="menu-btn__bar" />
+                            <span className="menu-btn__bar" />
+                            <span className="menu-btn__bar" />
+                        </button>
+                    )}
+                    <NavLink to="/" className="brand">
+                        Student Marketplace
+                    </NavLink>
+                </div>
 
                 <nav className="nav-links">
                     {navItems.map((item) => (
                         <NavLink
                             key={item.to}
                             to={item.to}
-                            end={item.end}
                             className={({ isActive }) =>
                                 isActive ? "nav-link nav-link--active" : "nav-link"
                             }
