@@ -12,4 +12,20 @@ export async function healthCheck() {
     return response.data;
 }
 
+// Listings
+export async function fetchListings() {
+    const response = await api.get("/listings");
+    return response.data;
+}
+
+export async function fetchListingById(id) {
+    const response = await api.get(`/listings/${id}`);
+    return response.data;
+}
+
+export async function createListing(data) {
+    const response = await api.post("/listings", data);
+    return response.data;
+}
+
 export default api;
