@@ -16,7 +16,7 @@ export default function App() {
                 <Route path="listings" element={<BrowseListingsPage />} />
                 <Route path="listings/new" element={<CreateListingPage />} />
                 <Route path="listings/:listingId" element={<ListingDetailsPage />} />
-                <Route path="messages" element={<MessagesPage />} />
+                <Route path="listings/:listingId" element={<ListingMessagesPage />} />
                 <Route path="favorites" element={<FavoritesPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Route>

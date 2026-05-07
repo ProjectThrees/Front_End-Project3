@@ -17,8 +17,8 @@ export default function MessagesPage() {
     const [sending, setSending] = useState(false);
     const [error, setError] = useState("");
 
-    // Replace this with your real auth/user context later.
-    const currentUserId = useMemo(() => 1, []);
+    const { user } = useAuth();
+    const currentUserId = user.id;
 
     useEffect(() => {
         async function loadPage() {
