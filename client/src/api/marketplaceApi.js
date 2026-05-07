@@ -5,6 +5,11 @@ export async function getListings() {
   return response.data;
 }
 
+export async function getListingById(listingId) {
+  const response = await api.get(`/listings/${listingId}`);
+  return response.data;
+}
+
 export async function getMessagesByListingId(listingId) {
   const res = await api.get(`/listings/${listingId}/messages`);
   return res.data;
